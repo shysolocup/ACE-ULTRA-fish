@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        
+        { // main builder depends on the other tasks to build
+            "label": "buildmodules",
+            "command": "echo",
+            "type": "shell",
+            "args": ["building modules"],
+            "dependsOn": [
+                "aepl"
+            ]
+        },
+
+
+        { // installs aepl
+            "label": "aepl",
+            "command": "npm",
+            "type": "process",
+            "args": [ "i", "aepl" ],
+        }
+
+    ]
+}
