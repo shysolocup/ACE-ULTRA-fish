@@ -1,0 +1,11 @@
+# bls developed by shysolocup
+# https://github.com/ReRand/bls
+
+
+[ Name = "ExampleMelee" ]
+[ Id = NewId() ]
+
+[ Type = Melee(
+    [ Damage = 10 ]
+    [ BackshotDamage = 100 ],
+)]
