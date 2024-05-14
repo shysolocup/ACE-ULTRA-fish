@@ -6,7 +6,7 @@
 [ Name = "Example" ]
 [ Version = 0.0.0 ]
 
-[ Paths = {
+[ Paths = DirGroup(
     
     Dir(
         [ Path = "./src/weapons" ]
@@ -23,4 +23,4 @@
         [ Type = Wraps ]
     )
 
-}]
+)]
