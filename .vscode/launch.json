@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             // "preLaunchTask": "buildmodules",
-            "program": "${workspaceFolder}/compiler/reader.js",
+            "program": "${workspaceFolder}/compiler/index.js",
         }
     ]
 }
