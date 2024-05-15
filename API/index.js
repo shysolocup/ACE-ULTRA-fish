@@ -4,31 +4,38 @@ require('node-fetch');
 
 
 
-let dir = __dirname;
-let OUT = {};
+const dir = __dirname;
+var OUT = {};
 
 
+const ext = fs.readFileSync(`${dir}/fileExt.txt`);
 
-const API = aepl.init("BlsAPI", class {
+
+OUT.Projects = {};
+fs.readdirSync(dir.replace("/API"), "").filter( p => p.toLowerCase().endsWith(`.project.${ext}`) )
+
+
+const API = aepl.init("AceAPI", class {
     constructor() {
 
-        this.projects = [];
+        this.projects = OUT.Projects;
 
         let typeDir = `${dir}/types`;
-        let types = fs.readdirSync(typeDir).filter( (f) => f.endsWith(".js") || f.endsWith(".ts") );
+        let types = fs.readdirSync(typeDir).filter( f => f.toLowerCase().endsWith(".js") || f.toLowerCase().endsWith(".ts") );
         
         types.forEach( t => {
             let type = require(`${typeDir}/${t}`);
             OUT[type.constructor.name] = type;
         });
 
-        this.fileExt = {
-            ".project.bls": this.types.Project,
-            ".weapon.bls": this.types.Weapon,
-            ".skin.bls": this.types.Skin,
-            ".texture.bls": this.types.Texture,
-            ".sound.bls": this.types.Sound,
-            ".wrap.bls": this.types.Wrap
+        this.fileExt = ext;
+        this.fileExtTypes = {
+            [`.project.${ext}`]: this.types.Project,
+            [`.weapon.${ext}`]: this.types.Weapon,
+            [`.skin.${ext}`]: this.types.Skin,
+            [`.texture.${ext}`]: this.types.Texture,
+            [`.sound.${ext}`]: this.types.Sound,
+            [`.wrap.${ext}`]: this.types.Wrap
         }
     
     }

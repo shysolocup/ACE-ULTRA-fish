@@ -1,4 +1,4 @@
-function BlsReader(text) {
+function AceReader(text) {
     let spl = text.split("\n");
 
     spl = spl.map((v) => {
@@ -17,9 +17,4 @@ function BlsReader(text) {
     console.log(stuff);
 }
 
-const fs = require('fs');
-
-fs.readFile('src/skins/ex/.skin.bls', 'utf8', function (err, data) {
-    if (err) throw err;
-    BlsReader(data);
-});
+module.exports = AceReader;
