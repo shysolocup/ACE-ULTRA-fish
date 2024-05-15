@@ -2,40 +2,50 @@ const aepl = require('aepl');
 const fs = require('fs');
 
 
-
 const dir = __dirname;
-var OUT = {};
+var OUT = {
+    Projects: {},
+    Types: {}
+};
 
 
 const ext = fs.readFileSync(`${dir}/fileExt.txt`);
 
 
-OUT.Projects = {};
-fs.readdirSync(dir.replace("/API", "")).filter( p => p.toLowerCase().endsWith(`.project.${ext}`) )
-
-
-const API = aepl.init("AceAPI", class {
+const API = aepl.init("FishAPI", class {
     constructor() {
 
         this.projects = OUT.Projects;
+        this.types = OUT.Types;
 
         let typeDir = `${dir}/types`;
-        let types = fs.readdirSync(typeDir).filter( f => f.toLowerCase().endsWith(".js") || f.toLowerCase().endsWith(".ts") );
+        let types = fs.readdirSync(typeDir);
         
         types.forEach( t => {
+            let name = t.replace(".js", "").replace(".ts", "");
             let type = require(`${typeDir}/${t}`);
-            OUT[type.constructor.name] = type;
+            this.types[name] = type;
+        });
+
+        let methDir = `${dir}/methods`;
+        let methods = fs.readdirSync(methDir).filter( f => f.toLowerCase().endsWith(".js") || f.toLowerCase().endsWith(".ts") );
+        
+        methods.forEach( f => {
+            require(`${methDir}/${f}`);
+        });
+
+        let projects = fs.readdirSync(dir.replace("/API", "")).filter( p => p.toLowerCase().endsWith(`.project.${ext}`) );
+        
+        methods.forEach( f => {
+            require(`${methDir}/${f}`);
         });
 
         this.fileExt = ext;
-        this.fileExtTypes = {
-            [`.project.${ext}`]: this.types.Project,
-            [`.weapon.${ext}`]: this.types.Weapon,
-            [`.skin.${ext}`]: this.types.Skin,
-            [`.texture.${ext}`]: this.types.Texture,
-            [`.sound.${ext}`]: this.types.Sound,
-            [`.wrap.${ext}`]: this.types.Wrap
-        }
+        require('./fileExtTypes.js');
+
+        setInterval(() => {}, 1 << 30);
+
+        return this;
     
     }
 });
