@@ -1,2 +1,2 @@
 # BLS
-A modding API for the ReRand Roblox game ACE-ULTRA
+A modding API and programming language for the ReRand Roblox game ACE-ULTRA
