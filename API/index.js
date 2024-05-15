@@ -1,6 +1,5 @@
 const aepl = require('aepl');
 const fs = require('fs');
-require('node-fetch');
 
 
 
@@ -12,7 +11,7 @@ const ext = fs.readFileSync(`${dir}/fileExt.txt`);
 
 
 OUT.Projects = {};
-fs.readdirSync(dir.replace("/API"), "").filter( p => p.toLowerCase().endsWith(`.project.${ext}`) )
+fs.readdirSync(dir.replace("/API", "")).filter( p => p.toLowerCase().endsWith(`.project.${ext}`) )
 
 
 const API = aepl.init("AceAPI", class {
