@@ -3,7 +3,7 @@
 
 # this is a template project change as needed
 
-Name = "Example",
+Name = "ExampleMod",
 Version = 0.0.0,
 
 Paths = DirGroup(
