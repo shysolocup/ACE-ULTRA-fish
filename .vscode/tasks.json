@@ -8,7 +8,8 @@
             "type": "shell",
             "args": ["building modules"],
             "dependsOn": [
-                "aepl"
+                "aepl",
+                "fetch"
             ]
         },
 
@@ -18,6 +19,14 @@
             "command": "npm",
             "type": "process",
             "args": [ "i", "aepl" ],
+        },
+
+
+        { // installs node-fetch
+            "label": "fetch",
+            "command": "npm",
+            "type": "process",
+            "args": [ "i", "node-fetch" ],
         }
 
     ]
