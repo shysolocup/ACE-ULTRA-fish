@@ -2,5 +2,5 @@
 # https://github.com/ReRand/BLS
 
 
-[ Name = "ExampleWrap" ]
-[ Id = 1 ]
+Name = "ExampleWrap",
+Id = 1

@@ -2,13 +2,13 @@
 # https://github.com/ReRand/BLS
 
 
-[ Name = "ExampleGun" ]
-[ Id = NewId() ]
+Name = "ExampleGun",
+Id = NewId(),
 
 
-[ Type = Gun(
-    [ Damage = 5 ]
-    [ HeadshotDamage = 100 ]
-    [ Behavior = Pierce ]
-    [ FireRate = 2 ]
-)]
+Type = Gun(
+    Damage = 5,
+    HeadshotDamage = 100,
+    Behavior = Pierce,
+    FireRate = 2
+)

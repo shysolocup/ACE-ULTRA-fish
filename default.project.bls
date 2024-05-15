@@ -3,24 +3,24 @@
 
 # this is a template project change as needed
 
-[ Name = "Example" ]
-[ Version = 0.0.0 ]
+Name = "Example",
+Version = 0.0.0,
 
-[ Paths = DirGroup(
+Paths = DirGroup(
     
     Dir(
-        [ Path = "./src/weapons" ]
-        [ Type = Weapons ]
-    )
+        Path = "./src/weapons",
+        Type = Weapons
+    ),
 
     Dir(
-        [ Path = "./src/skins" ]
-        [ Type = Skins ]
-    )
+        Path = "./src/skins",
+        Type = Skins
+    ),
 
     Dir(
-        [ Path = "./src/wraps" ]
-        [ Type = Wraps ]
+        Path = "./src/wraps",
+        Type = Wraps
     )
 
-)]
+)

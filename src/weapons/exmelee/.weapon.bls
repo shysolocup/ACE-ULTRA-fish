@@ -2,11 +2,16 @@
 # https://github.com/ReRand/BLS
 
 
-[ Name = "ExampleMelee" ]
-[ Id = NewId() ]
+Name = "ExampleMelee",
+Id = NewId(),
 
 
-[ Type = Melee(
-    [ Damage = 10 ]
-    [ BackshotDamage = 100 ],
-)]
+Type = Melee(
+    Damage = 10,
+    BackshotDamage = 100,
+
+    Sound = Sound(
+        Id = "rbxassetid://id",
+        Volume = 0.7
+    )
+)

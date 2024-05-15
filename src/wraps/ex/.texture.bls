@@ -2,6 +2,6 @@
 # https://github.com/ReRand/BLS
 
 
-[ Type = Decal(
-    [ Id = "rbxassetid://id" ]
-)]
+Type = Decal(
+    Id = "rbxassetid://id"
+)
