@@ -11,8 +11,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "preLaunchTask": "buildmodules",
-            "program": "${workspaceFolder}/compiler/index.js",
+            // "preLaunchTask": "buildmodules",
+            "program": "${workspaceFolder}/compiler/reader.js",
         }
     ]
 }

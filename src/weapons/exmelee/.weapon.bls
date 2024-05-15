@@ -5,6 +5,7 @@
 [ Name = "ExampleMelee" ]
 [ Id = NewId() ]
 
+
 [ Type = Melee(
     [ Damage = 10 ]
     [ BackshotDamage = 100 ],

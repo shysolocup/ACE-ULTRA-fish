@@ -5,6 +5,7 @@
 [ Name = "ExampleGun" ]
 [ Id = NewId() ]
 
+
 [ Type = Gun(
     [ Damage = 5 ]
     [ HeadshotDamage = 100 ]
