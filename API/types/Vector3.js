@@ -1,10 +1,10 @@
 const { API } = require('../index.js');
 module.exports = 
 
-API.newC("Project", class {
+API.newC("Vector3", class {
     constructor(blsdata) {
-        this.Name = blsdata.Name;
-        this.Version = blsdata.Version;
-        this.Paths = blsdata.Paths;
+        this.x = blsdata[1];
+        this.y = blsdata[2];
+        this.z = blsdata[3];
     }
 });
