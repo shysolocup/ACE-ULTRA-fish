@@ -1,5 +1,5 @@
-# ace developed by shysolocup
-# https://github.com/ReRand/ace
+# fish developed by shysolocup
+# https://github.com/ReRand/fish
 
 # this is a template project change as needed
 
