@@ -34,10 +34,15 @@ const API = aepl.init("FishAPI", class {
             require(`${methDir}/${f}`);
         });
 
-        let projects = fs.readdirSync(dir.replace("/API", "")).filter( p => p.toLowerCase().endsWith(`.project.${ext}`) );
+        let projDir = dir.replace("/API", "");
+        let projects = fs.readdirSync(projDir).filter( p => p.toLowerCase().endsWith(`.project.${ext}`) );
         
-        methods.forEach( f => {
-            require(`${methDir}/${f}`);
+        projects.forEach( p => {
+            let blsdata = this.read(fs.readFileSync(`${projDir}/${p}`), Object);
+            let proj = new this.Project(blsdata);
+
+            this.projects[(blsdata.Name) ? blsdata.Name : p.replace(".project.fish", "")] = proj;
+
         });
 
         this.fileExt = ext;
